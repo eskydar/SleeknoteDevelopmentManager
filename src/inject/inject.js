@@ -15,7 +15,7 @@ var storageToDelete = [
 	"designer"
 ];
 
-var sleeknoteCookieNeedle = ["SleekNote", "sleeknote", "sleekNote", "Sleeknote"];
+var sleeknoteCookieRegex = /sleeknote/i;
 
 var currentCookiesList = cookieHandler.getCookieNames();
 
@@ -25,12 +25,10 @@ chrome.runtime.onMessage.addListener(
 			//Remove cookie
 			var deletedACookie = false;
 			currentCookiesList.forEach(function (cookieToDelete) {
-				sleeknoteCookieNeedle.forEach(function (cookieToFind) {
-					if (cookieToDelete.indexOf(cookieToFind) > -1) {
-						cookieHandler.removeCookie(cookieToDelete);
-						deletedACookie = true;
-					}
-				});
+				if (cookieToDelete.match(sleeknoteCookieRegex)) {
+					cookieHandler.removeCookie(cookieToDelete);
+					deletedACookie = true;
+				}
 			});
 			if (deletedACookie) {
 				sendResponse({type:'success'});

@@ -24,7 +24,8 @@
   "permissions": [
     "contextMenus",
     "cookies",
-    "notifications"
+    "notifications",
+    "tabs"
   ],
   "content_scripts": [
     {

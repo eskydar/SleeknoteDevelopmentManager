@@ -16,6 +16,10 @@ function showNotification(options) {
     });
 }
 
+function refreshPage(tabs) {
+    chrome.tabs.reload(tabs[0].id);
+}
+
 addToContextMenu("Remove Sleeknote cookie", ["all"], function(e) {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         chrome.tabs.sendMessage(tabs[0].id, {action: "removeCookie"}, function(response) {
@@ -24,8 +28,9 @@ addToContextMenu("Remove Sleeknote cookie", ["all"], function(e) {
             };
             if (response.type == "success") {
                 options.title = "Sleeknote cookies";
-                options.message = "The Sleeknote cookies have successfully been deleted!"
+                options.message = "The Sleeknote cookies have successfully been deleted!";
                 showNotification(options);
+                // refreshPage(tabs);
             }
         });
     });
@@ -39,8 +44,9 @@ addToContextMenu("Remove Sleeknote storage", ["all"], function(e) {
             };
             if (response.type == "success") {
                 options.title = "Sleeknote local storage";
-                options.message = "The Sleeknote local storage has successfully been deleted!"
+                options.message = "The Sleeknote local storage has successfully been deleted!";
                 showNotification(options);
+                refreshPage(tabs);
             }
         });
     });
