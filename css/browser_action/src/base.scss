@@ -55,6 +55,12 @@ table {
 //defaults
 @import 'defaults/colors';
 
+//elements
+@import 'elements/headings';
+@import 'elements/label';
+@import 'elements/checkbox';
+
 //partials
 @import 'partials/body';
 @import 'partials/header';
+@import 'partials/settings';

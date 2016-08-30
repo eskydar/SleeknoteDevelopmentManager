@@ -1,3 +1,12 @@
+var settings = {};
+// test[CONST.storageSettingsKey] = defaultPluginSettings;
+//
+// console.log(test)
+
+// var settings = chrome.storage.local.get({option: "default"}, function(data){
+//     chrome.storage.local.set(data, /*...*/);
+// });
+
 function addToContextMenu(title, contexts, cb) {
     chrome.contextMenus.create({
         "title": title,

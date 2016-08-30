@@ -24,13 +24,17 @@ chrome.runtime.onMessage.addListener(
 		if (request.action == "removeCookie"){
 			//Remove cookie
 			var deletedACookie = false;
+			console.log(cookieHandler.getCookieNames())
 			currentCookiesList.forEach(function (cookieToDelete) {
+				console.log('Lets see if there is a cookie named', cookieToDelete);
 				if (cookieToDelete.match(sleeknoteCookieRegex)) {
+					console.log('WE ARE GOING TO DELETE', cookieToDelete);
 					cookieHandler.removeCookie(cookieToDelete);
 					deletedACookie = true;
 				}
 			});
 			if (deletedACookie) {
+				console.log(cookieHandler.getCookieNames())
 				sendResponse({type:'success'});
 			} else {
 				sendResponse({type:'error'});

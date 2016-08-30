@@ -1,0 +1,3 @@
+var CONST = {
+  storageSettingsKey: 'sleeknoteChromeSettings'
+};

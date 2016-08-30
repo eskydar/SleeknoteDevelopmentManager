@@ -1,0 +1,22 @@
+div.title-wrapper {
+  position: relative;
+  h2 {
+    background: $white;
+    display: inline-block;
+    font-family: monospace;
+    font-weight: 600;
+    margin: 0;
+    padding: 0 10px 0 0;
+    position: relative;
+    z-index: 2;
+    color: $brand-color-darker-gray;
+  }
+  &:before {
+    content: '';
+    height: 1px;
+    width: 100%;
+    background: $brand-color-light-gray;
+    position: absolute;
+    top: 50%;
+  }
+}

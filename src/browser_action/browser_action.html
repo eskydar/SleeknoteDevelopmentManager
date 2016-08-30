@@ -6,6 +6,44 @@
 	<link rel="stylesheet" href="../../css/browser_action/browser_action.css">
 </head>
 <body>
-    <header>Sleeknote</header>
+    <header>
+        <span class="logo-container">
+            <img src="../../../resources/logo-icon.svg" alt="">
+        </span>
+    </header>
+    <section id="settings">
+        <!--Cookie settings start-->
+        <div class="settings-wrapper">
+            <div class="title-wrapper">
+                <h2>Cookie options</h2>
+            </div>
+            <div class="toggle-checkbox">
+                <label for="cookie-refresh-on-delete">Refresh on delete
+                    <input id="cookie-refresh-on-delete" type="checkbox">
+                <span class="toggle-wrapper">
+                    <span class="toggle-ball"></span>
+                </span>
+                </label>
+            </div>
+        </div><!--Cookie settings end-->
+
+        <!--Storage settings start-->
+        <div class="settings-wrapper">
+            <div class="title-wrapper">
+                <h2>Local storage options</h2>
+            </div>
+            <div class="toggle-checkbox">
+                <label for="storage-refresh-on-delete">Refresh on delete
+                    <input id="storage-refresh-on-delete" type="checkbox">
+                <span class="toggle-wrapper">
+                    <span class="toggle-ball"></span>
+                </span>
+                </label>
+            </div>
+        </div><!--Storage settings end-->
+    </section>
+    <script src="../../../js/classes/localStorage.js"></script>
+    <script src="../../../js/classes/utils.js"></script>
+    <script src="../../../js/scripts/main.js"></script>
 </body>
 </html>

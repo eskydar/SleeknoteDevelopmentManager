@@ -12,6 +12,8 @@
   "default_locale": "en",
   "background": {
     "scripts": [
+      "js/json/constants.js",
+      "js/json/defaultSettings.js",
       "src/bg/background.js"
     ],
     "persistent": true
@@ -33,6 +35,8 @@
         "<all_urls>"
       ],
       "js": [
+        "js/json/constants.js",
+        "js/json/defaultSettings.js",
         "js/classes/utils.js",
         "js/classes/cookies.js",
         "js/classes/localStorage.js",
